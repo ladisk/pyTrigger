@@ -1,7 +1,7 @@
 pyTrigger
 ========
 
-Software trigger for data acquisition
+Software trigger for data acquisition (with ring buffer).
 -------------------------------
 
 |travis|
