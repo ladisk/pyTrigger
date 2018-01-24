@@ -198,5 +198,29 @@ def test_add_long_data3():
     np.testing.assert_array_equal(data[2:8], pt.get_data())
 
 
+def test_add_long_data():
+    up_to = 10
+    data = np.arange(6*up_to).reshape((-1,2))
+    test_data = np.arange(start=-4, stop=6*up_to).reshape((-1,2))
+    test_data[:2,:] = np.zeros((2,2), dtype=float)
+
+    # changing trigger level
+    for i in range(up_to):
+        pt = pyTrigger(rows=5, channels=2, trigger_channel=0, trigger_level=2*i-0.1, presamples=2)
+        pt.add_data(data)
+        assert pt.triggered == True
+        assert pt.rows_left == 0
+        assert pt.finished == True
+        np.testing.assert_array_equal(test_data[i:i+5], pt.get_data())
+
+    # changing data
+    for i in range(up_to):
+        pt = pyTrigger(rows=5, channels=2, trigger_channel=0, trigger_level=20, presamples=2)
+        pt.add_data(data[i:])
+        assert pt.triggered == True
+        assert pt.rows_left == 0
+        assert pt.finished == True
+        np.testing.assert_array_equal(test_data[11:11+5], pt.get_data())
+
 if __name__ == '__mains__':
     np.testing.run_module_suite()
