@@ -1,8 +1,8 @@
 pyTrigger
-========
+=========
 
-Software trigger for data acquisition (with ring buffer).
--------------------------------
+Software trigger for data acquisition (with ring buffer)
+--------------------------------------------------------
 
 Test pyTrigger with Binder:
 |binder| 
