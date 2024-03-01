@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 import numpy as np
 
-__version__ = '0.12'
+__version__ = '0.12.2'
 
 class RingBuffer2D:
     """A 2D ring buffer using numpy arrays
