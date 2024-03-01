@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pyTrigger"
+version = "0.12.1"
+authors = [{name = "Janko Slavič", email = "janko.slavic@fs.uni-lj.si"}]
+maintainers = [{name = "Janko Slavič", email = "janko.slavic@fs.uni-lj.si"}]
+license = "MIT"
+description = "Software trigger for data acquisition (with ring buffer)."
+readme = "readme.rst"
+keywords = ["trigger", "data acquisition", "ring buffer"]
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "matplotlib",
+]
+classifiers = [
+    'Development Status :: 5 - Production/Stable',
+    'Intended Audience :: Developers',
+    'Topic :: Scientific/Engineering',
+    'Programming Language :: Python :: 3.10',
+    "License :: OSI Approved :: MIT License",
+]
+
+[project.optional-dependencies]
+dev = [
+    "sphinx",
+    "twine",
+    "wheel",
+    "build",
+    "pytest",
+]
+
+[project.urls]
+homepage = "https://github.com/ladisk/pyTrigger"
+documentation = "https://github.com/ladisk/pyTrigger"
+source = "https://github.com/ladisk/pyTrigger"
